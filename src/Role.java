@@ -1,7 +1,15 @@
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
 public class Role extends Suid {
+    Scanner sc = new Scanner(System.in);
     int id;
     String title;
     String description;
+    Connection connection = DBConnection.getConnection();
 
     public Role() {
     }
@@ -34,25 +42,61 @@ public class Role extends Suid {
 
     @Override
     public void insert() {
-        // TODO Auto-generated method stub
+        System.out.print("Enter title: ");
+        title = sc.nextLine();
 
+        System.out.print("Enter description: ");
+        description = sc.nextLine();
+
+        String query = "INSERT INTO role (title, description) VALUES ('" + title + "', '" + description + "')";
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void update() {
-        // TODO Auto-generated method stub
+        System.out.print("Enter title: ");
+        title = sc.nextLine();
 
+        System.out.print("Enter description: ");
+        description = sc.nextLine();
+
+        String query = "UPDATE role SET title = '" + title + "', description = '" + description + "' WHERE id = " + id;
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void delete() {
-        // TODO Auto-generated method stub
-
+        String query = "DELETE FROM role WHERE id = " + id;
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void select() {
-        // TODO Auto-generated method stub
-
+        String query = "SELECT * FROM role";
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()) {
+                System.out.println("ID: " + resultSet.getInt("id") + " | Title: " + resultSet.getString("title")
+                        + " | Description: " + resultSet.getString("description"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

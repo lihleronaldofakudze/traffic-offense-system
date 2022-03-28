@@ -1,8 +1,16 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
 public class Divertion extends Suid {
+    Scanner sc = new Scanner(System.in);
     int id;
     String name;
     String type;
     String description;
+    Connection connection = DBConnection.getConnection();
 
     public Divertion() {
     }
@@ -48,26 +56,91 @@ public class Divertion extends Suid {
 
     @Override
     public void insert() {
-        // TODO Auto-generated method stub
+        System.out.print("Enter name: ");
+        name = sc.nextLine();
 
+        System.out.print("Enter type: ");
+        type = sc.nextLine();
+
+        System.out.print("Enter description: ");
+        description = sc.nextLine();
+
+        try {
+            String sql = "INSERT INTO divertion (name, type, description) VALUES (?, ?, ?)";
+            PreparedStatement pst = connection.prepareStatement(sql);
+            pst.setString(1, name);
+            pst.setString(2, type);
+            pst.setString(3, description);
+            pst.executeUpdate();
+            System.out.println("Insert successfully...");
+            System.out.println(".....................................................");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void update() {
-        // TODO Auto-generated method stub
+        System.out.print("Enter id: ");
+        id = sc.nextInt();
 
+        System.out.print("Enter name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter type: ");
+        type = sc.nextLine();
+
+        System.out.print("Enter description: ");
+        description = sc.nextLine();
+
+        try {
+            String sql = "UPDATE divertion SET name = ?, type = ?, description = ? WHERE id = ?";
+            PreparedStatement pst = connection.prepareStatement(sql);
+            pst.setString(1, name);
+            pst.setString(2, type);
+            pst.setString(3, description);
+            pst.setInt(4, id);
+            pst.executeUpdate();
+            System.out.println("Update successfully...");
+            System.out.println(".....................................................");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void delete() {
-        // TODO Auto-generated method stub
+        System.out.print("Enter id: ");
+        id = sc.nextInt();
 
+        try {
+            String sql = "DELETE FROM divertion WHERE id = ?";
+            PreparedStatement pst = connection.prepareStatement(sql);
+            pst.setInt(1, id);
+            pst.executeUpdate();
+            System.out.println("Delete successfully...");
+            System.out.println(".....................................................");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void select() {
-        // TODO Auto-generated method stub
-
+        try {
+            String sql = "SELECT * FROM divertion";
+            PreparedStatement pst = connection.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                System.out.print("Id: " + rs.getInt("id"));
+                System.out.print("Name: " + rs.getString("name"));
+                System.out.print("Type: " + rs.getString("type"));
+                System.out.println("Description: " + rs.getString("description"));
+                System.out.println(".....................................................");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }
