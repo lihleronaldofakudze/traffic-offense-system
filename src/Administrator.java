@@ -94,7 +94,7 @@ public class Administrator extends Suid {
     @Override
     public void insert() {
         System.out.print("Enter Role Id: ");
-        int roleId = sc.nextInt();
+        int roleId = Integer.parseInt(sc.nextLine());
 
         System.out.print("Enter name: ");
         name = sc.nextLine();
@@ -127,7 +127,7 @@ public class Administrator extends Suid {
     @Override
     public void update() {
         System.out.print("Enter id: ");
-        id = sc.nextInt();
+        id = Integer.parseInt(sc.nextLine());
 
         System.out.print("Enter Role Id: ");
         roleId = sc.nextInt();
@@ -164,7 +164,7 @@ public class Administrator extends Suid {
     @Override
     public void delete() {
         System.out.print("Enter id: ");
-        id = sc.nextInt();
+        id = Integer.parseInt(sc.nextLine());
 
         String sql = "DELETE FROM administrators WHERE id = ?";
         try {

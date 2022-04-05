@@ -1,6 +1,24 @@
 {
   "java.project.sourcePaths": ["src"],
   "java.project.outputPath": "bin",
-  "java.project.referencedLibraries": ["lib/**/*.jar"],
-  "cSpell.words": ["Divertion"]
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "c:\\Users\\Probook\\Documents\\Setup\\mysql-connector-java-8.0.28.jar"
+  ],
+  "cSpell.words": ["Divertion"],
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "traffic_offence",
+      "database": "traffic_management",
+      "username": "root",
+      "password": ""
+    }
+  ]
 }

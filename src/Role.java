@@ -59,6 +59,9 @@ public class Role extends Suid {
 
     @Override
     public void update() {
+        System.out.print("Enter id: ");
+        id = Integer.parseInt(sc.nextLine());
+
         System.out.print("Enter title: ");
         title = sc.nextLine();
 
@@ -76,6 +79,9 @@ public class Role extends Suid {
 
     @Override
     public void delete() {
+        System.out.print("Enter id: ");
+        id = Integer.parseInt(sc.nextLine());
+
         String query = "DELETE FROM role WHERE id = " + id;
         try {
             Statement statement = connection.createStatement();

@@ -94,6 +94,8 @@ public class Traffic extends Suid {
 
     @Override
     public void update() {
+        System.out.print("Enter Traffic ID: ");
+        id = Integer.parseInt(sc.nextLine());
         System.out.print("Enter Traffic Name: ");
         name = sc.nextLine();
 
@@ -124,7 +126,7 @@ public class Traffic extends Suid {
     @Override
     public void delete() {
         System.out.print("Enter Traffic ID: ");
-        id = sc.nextInt();
+        id = Integer.parseInt(sc.nextLine());
 
         String query = "delete from traffic where id=?";
         try {

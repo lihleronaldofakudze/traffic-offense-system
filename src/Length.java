@@ -76,6 +76,9 @@ public class Length extends Suid {
 
     @Override
     public void update() {
+        System.out.print("Enter id: ");
+        id = Integer.parseInt(sc.nextLine());
+
         System.out.print("Enter name: ");
         name = sc.nextLine();
 
@@ -98,7 +101,7 @@ public class Length extends Suid {
     @Override
     public void delete() {
         System.out.print("Enter id: ");
-        id = sc.nextInt();
+        id = Integer.parseInt(sc.nextLine());
 
         try {
             String query = "DELETE FROM length WHERE id = " + id + ";";

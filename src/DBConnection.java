@@ -17,6 +17,7 @@ public class DBConnection {
             System.out.println("Connection database successfully...");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
+            System.exit(0);
         }
     }
 

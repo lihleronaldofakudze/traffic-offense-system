@@ -9,9 +9,9 @@ public class App {
             System.out.println("........................................");
             System.out.println("Login, To Gain Access To The Database");
             System.out.println("........................................");
-            System.out.println("Username: ");
+            System.out.print("Username: ");
             String username = scanner.nextLine();
-            System.out.println("Password: ");
+            System.out.print("Password: ");
             String password = scanner.nextLine();
             boolean login = administrator.login(username, password);
             if (login) {
@@ -26,8 +26,8 @@ public class App {
                 System.out.println("7. Traffic");
                 System.out.println("8. Exit");
                 System.out.println("........................................");
-                System.out.println("Enter Your Choice: ");
-                int choice = scanner.nextInt();
+                System.out.print("Enter Your Choice: ");
+                int choice = Integer.parseInt(scanner.nextLine());
 
                 switch (choice) {
                     case 1:
@@ -73,8 +73,8 @@ public class App {
             System.out.println("4. Update Traffic");
             System.out.println("5. Exit");
             System.out.println("........................................");
-            System.out.println("Enter Your Choice: ");
-            int choice = scanner.nextInt();
+            System.out.print("Enter Your Choice: ");
+            int choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
                 case 1:
@@ -115,8 +115,8 @@ public class App {
             System.out.println("4. Update Routes");
             System.out.println("5. Exit");
             System.out.println("........................................");
-            System.out.println("Enter Your Choice: ");
-            int choice = scanner.nextInt();
+            System.out.print("Enter Your Choice: ");
+            int choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
                 case 1:
@@ -157,8 +157,8 @@ public class App {
             System.out.println("4. Update Police");
             System.out.println("5. Exit");
             System.out.println("........................................");
-            System.out.println("Enter Your Choice: ");
-            int choice = scanner.nextInt();
+            System.out.print("Enter Your Choice: ");
+            int choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
                 case 1:
@@ -199,8 +199,8 @@ public class App {
             System.out.println("4. Update Length");
             System.out.println("5. Exit");
             System.out.println("........................................");
-            System.out.println("Enter Your Choice: ");
-            int choice = scanner.nextInt();
+            System.out.print("Enter Your Choice: ");
+            int choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
                 case 1:
@@ -241,8 +241,8 @@ public class App {
             System.out.println("4. Update Role");
             System.out.println("5. Exit");
             System.out.println("........................................");
-            System.out.println("Enter Your Choice: ");
-            int choice = scanner.nextInt();
+            System.out.print("Enter Your Choice: ");
+            int choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
                 case 1:
@@ -283,8 +283,8 @@ public class App {
             System.out.println("4. Update Divertion");
             System.out.println("5. Exit");
             System.out.println("........................................");
-            System.out.println("Enter Your Choice: ");
-            int choice = scanner.nextInt();
+            System.out.print("Enter Your Choice: ");
+            int choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
                 case 1:
@@ -325,8 +325,8 @@ public class App {
             System.out.println("4. Update Administrator");
             System.out.println("5. Exit");
             System.out.println("........................................");
-            System.out.println("Enter Your Choice: ");
-            int choice = scanner.nextInt();
+            System.out.print("Enter Your Choice: ");
+            int choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
                 case 1:
