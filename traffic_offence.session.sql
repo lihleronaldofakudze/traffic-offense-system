@@ -21,7 +21,9 @@ CREATE TABLE divertion (
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name TEXT NOT NULL,
     type TEXT NULL,
-    description TEXT NULL
+    description TEXT NULL,
+    police_id INTEGER,
+    FOREIGN KEY (police_id) REFERENCES police(id)
 );
 
 -- @BLOCK
@@ -30,7 +32,9 @@ CREATE TABLE length (
     name TEXT NOT NULL,
     type TEXT NULL,
     description TEXT NULL,
-    time VARCHAR(100)
+    time VARCHAR(100),
+    route_id INTEGER,
+    FOREIGN KEY (route_id) REFERENCES routes(id)
 );
 
 -- @BLOCK
@@ -39,7 +43,9 @@ CREATE TABLE routes (
     length VARCHAR(100) NOT NULL,
     name TEXT NOT NULL,
     type TEXT NULL,
-    description TEXT NULL
+    description TEXT NULL,
+    police_id INTEGER,
+    FOREIGN KEY (police_id) REFERENCES police(id)
 );
 
 -- @BLOCK
