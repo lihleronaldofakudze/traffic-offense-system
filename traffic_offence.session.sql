@@ -51,7 +51,7 @@ CREATE TABLE routes (
 -- @BLOCK
 CREATE TABLE police (
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
-     name TEXT NOT NULL,
+    name TEXT NOT NULL,
     type TEXT NULL,
     description TEXT NULL,
     password VARCHAR(100) UNIQUE
@@ -221,5 +221,3 @@ BEGIN
     DELETE FROM administrator
     WHERE id = OLD.id;
 END #
-=======
->>>>>>> 4dfc477f4a610eea00585e7c9279a86de7ad32ec
