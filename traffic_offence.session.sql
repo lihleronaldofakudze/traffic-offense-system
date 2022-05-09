@@ -56,6 +56,7 @@ CREATE TABLE police (
     description TEXT NULL,
     password VARCHAR(100) UNIQUE
 );
+<<<<<<< HEAD
 
 -- DISTINCT
 SELECT DISTINCT name 
@@ -220,3 +221,5 @@ BEGIN
     DELETE FROM administrator
     WHERE id = OLD.id;
 END #
+=======
+>>>>>>> 4dfc477f4a610eea00585e7c9279a86de7ad32ec
