@@ -56,7 +56,6 @@ CREATE TABLE police (
     description TEXT NULL,
     password VARCHAR(100) UNIQUE
 );
-<<<<<<< HEAD
 
 -- DISTINCT
 SELECT DISTINCT name 
